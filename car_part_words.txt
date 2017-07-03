@@ -1,0 +1,15 @@
+accelerator
+blinker
+brake
+bumper
+clutch
+dashboard
+gear
+headlight
+horn
+rearviewmirror
+seat
+trunk
+wheel
+wheels
+windshield

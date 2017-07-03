@@ -105,7 +105,9 @@ public class Hangman {
 		HangDrawing.drawEmpty();
 
 		ReadDictionaryFindWord r = new ReadDictionaryFindWord();
-		words = r.getWord();
+		out.println("What kind of words would you like: regular, clothes, castle, car, or farm?");
+		String wordChoice = keyboard.next();
+		words = r.getWord(wordChoice);
 		randomWord = getRandomWord(words);
 		// out.println(randomWord);
 		for (int i = 0; i < randomWord.length(); i++) {

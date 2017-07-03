@@ -9,13 +9,28 @@ import java.util.List;
 public class ReadDictionaryFindWord {
 	int upperBound;
 	List<String> words = new ArrayList<String>();
+	String wordChoice;
 
-	public ReadDictionaryFindWord() {
-		readWords();
-	}
-
-	private void readWords() {
-		File dict = new File("dictionary.txt");
+	public List<String> readWords(String wordChoice) {
+		String fileChoice = null;
+		switch (wordChoice) {
+		case "farm":
+			fileChoice = "farm_animal_words.txt";
+			break;
+		case "clothes":
+			fileChoice = "clothes_words.txt";
+			break;
+		case "castle":
+			fileChoice = "castle_words.txt";
+			break;
+		case "car":
+			fileChoice = "car_part_words.txt";
+			break;
+		case "regular":
+			fileChoice = "dictionary.txt";
+			break;
+		}
+		File dict = new File(fileChoice);
 		BufferedReader br = null;
 		String line = null;
 		try {
@@ -35,13 +50,15 @@ public class ReadDictionaryFindWord {
 			} catch (IOException io) {
 			}
 		}
+		return words;
 	}
 
 	public int size() {
 		return words.size();
 	}
 
-	public List<String> getWord() {
+	public List<String> getWord(String wordChoice) {
+		words = readWords(wordChoice);
 		return words;
 	}
 
